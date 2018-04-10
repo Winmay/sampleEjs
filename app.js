@@ -19,6 +19,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 
+//Express处理这个post请求是通过中间件bodyParser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+
 //这里传入了一个密钥加session id
 app.use(cookieParser('Wilson'));
 //使用靠就这个中间件

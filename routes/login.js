@@ -24,7 +24,9 @@ router.post('/', function(req, res) {
         }
 
          userPwd = md5.update(userPwd).digest('hex');
-         if(results[0].UserName != userName || results[0].UserPass != userPwd)
+         console.log(results);
+         console.log('userName:'+userName+'\n'+'userPwd:'+userPwd);
+         if(results[0].userName != userName || results[0].userPass != userPwd)
          {
              res.locals.error = '用户名或密码有误';
              res.render('login',{title:TITLE_LOGIN});
